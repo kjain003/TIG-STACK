@@ -89,9 +89,12 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-# Update Telegraf configuration
+# Update Telegraf configuration with influx url,username and password for telegraf db
 sed -i "s#urls = \[\"http://localhost:8086\"\]#urls = [\"$influx_url\"]#" /tmp/telegraf.conf
 sed -i "s/database = \"telegraf\"/database = \"telegraf\"\\n  username = \"$username\"\\n  password = \"$password\"/" /tmp/telegraf.conf
+
+#Update configuration to add ip address of given device
+sed -i -e "s/__ip__/`hostname -i`/g" /tmp/telegraf.conf
 
 # Replace existing Telegraf configuration with the updated one
 mv /tmp/telegraf.conf ${TELEGRAFCFG}

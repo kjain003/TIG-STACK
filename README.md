@@ -31,9 +31,9 @@ This script automates the setup of InfluxDB using Docker Compose.
 The script will check if Docker and Docker Compose are installed. If not, it will install them. It will then fetch the Docker Compose configuration from this GitHub repository, run Docker Compose to set up InfluxDB, and create a user for Telegraf to ingest data into InfluxDB.
 4. Follow the on-screen prompts to enter the password for the Telegraf user.
 
-# Telegraf Configuration Update Script
+# Telegraf Installer Script
 
-This script allows you to update the Telegraf configuration file with your InfluxDB URL, username, and password. It downloads the Telegraf configuration from a specified GitHub repository, updates it with the provided InfluxDB credentials, and restarts the Telegraf service to apply the changes.
+This script allows you to install and  update the Telegraf configuration file with your InfluxDB URL, username, and password. It downloads the Telegraf configuration from a specified GitHub repository, updates it with the provided InfluxDB credentials, and restarts the Telegraf service to apply the changes.
 
 ## Usage
 

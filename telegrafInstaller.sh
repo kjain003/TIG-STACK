@@ -102,6 +102,10 @@ systemctl restart telegraf
 # Check if Telegraf restarted successfully
 if systemctl is-active --quiet telegraf; then
   echo "Telegraf configuration updated successfully."
+  
+  # Bind Telegraf to a specific CPU core (e.g., core 0)
+  #taskset -c 0 -p $(pgrep telegraf)
+  #echo "Telegraf restricted to use a single CPU core."
 else
   echo "Error: Telegraf failed to restart."
   exit 1

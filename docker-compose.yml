@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  influxdb:
+    image: influxdb:1.8
+    container_name: influxdb
+    ports:
+      - "8086:8086"  # Expose InfluxDB HTTP API port
+      - "8088:8088"  # Expose InfluxDB RPC port
+    volumes:
+      - ./influxdb_data:/var/lib/influxdb  # Persist data to host machine
+      - ./influxdb_config:/etc/influxdb    # Mount custom configuration
+    restart: always
+    environment:
+      INFLUXDB_HTTP_AUTH_ENABLED: "true"  # Enable authentication

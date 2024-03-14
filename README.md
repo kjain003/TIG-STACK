@@ -59,7 +59,7 @@ Uncomment below part in telegrafInstaller.sh file to enable this and bind telegr
 ```
 
 Script Features
-- Downloads the Telegraf configuration file from a specified GitHub repository.
+- Downloads the Telegraf configuration file from this GitHub repository.
 - Updates the configuration file with the provided InfluxDB URL, username, and password.
 - Restarts the Telegraf service to apply the changes.
 - Restricts Telegraf to use a single CPU core after restarting (optional).

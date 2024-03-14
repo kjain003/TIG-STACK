@@ -17,11 +17,11 @@ This script automates the setup of InfluxDB using Docker Compose.
 1. Clone this repository to your local machine:
 
    ```bash
-   git clone https://github.com/kjain003/telegraf-config.git
+   git clone https://github.com/kjain003/TIG-STACK.git
    ```
 2. Navigate to the cloned directory:
    ```bash
-   cd telegraf-config
+   cd TIG-STACK
    ```
 3. Make Script executable and run it
    ```bash

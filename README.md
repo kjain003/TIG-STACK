@@ -1,5 +1,5 @@
 # TIG STACK
-telegraf,influx and grafana configuration to monitor linux server performance metrics
+Telegraf,Influx and grafana configuration to monitor linux server performance metrics
 
 
 # InfluxDB Setup Script

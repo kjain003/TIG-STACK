@@ -47,14 +47,10 @@ if [ -z "$influx_url" ] || [ -z "$username" ] || [ -z "$password" ]; then
 fi
 
 ### Add Telegraf repository
-cat <<EOF | sudo tee /etc/yum.repos.d/influxdata.repo
-[influxdata]
-name = InfluxData Repository - RHEL \$releasever
-baseurl = https://repos.influxdata.com/rhel/\$releasever/\$basearch/stable
-enabled = 1
-gpgcheck = 1
-gpgkey = https://repos.influxdata.com/influxdb.key
-EOF
+### Add Telegraf repository
+REPO_URL="https://raw.githubusercontent.com/kjain003/telegraf-config/main/influxdata.repo"
+REPO_CFG="/etc/yum.repos.d/influxdata.repo"
+curl -sSfLJO "$REPO_URL" -o $REPO_CFG
 
 cd /var/tmp
 ### Update packages

@@ -25,8 +25,8 @@ This script automates the setup of InfluxDB using Docker Compose.
 3. Make Script executable and run it
    ```bash
    chmod +x influxdbInstaller.sh
-   ```
    ./influxdbInstaller.sh
+   ```
 
 The script will check if Docker and Docker Compose are installed. If not, it will install them. It will then fetch the Docker Compose configuration from this GitHub repository, run Docker Compose to set up InfluxDB, and create a user for Telegraf to ingest data into InfluxDB.
 4. Follow the on-screen prompts to enter the password for the Telegraf user.

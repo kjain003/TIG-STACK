@@ -34,7 +34,7 @@ The script will check if Docker and Docker Compose are installed. If not, it wil
 
 # Telegraf Installer Script
 
-This script allows you to install and  update the Telegraf configuration file with your InfluxDB URL, username, and password. It downloads the Telegraf configuration from a specified GitHub repository, updates it with the provided InfluxDB credentials, and restarts the Telegraf service to apply the changes.
+This script allows you to install and  update the Telegraf configuration file with your InfluxDB URL, username, and password. It downloads the Telegraf configuration from this GitHub repository(telegraf.conf), updates it with the provided InfluxDB credentials, and restarts the Telegraf service to apply the changes.
 
 ## Usage
 
@@ -49,8 +49,18 @@ For example:
 ```bash
 sudo ./telegrafInstaller.sh -i http://localhost:8086 -u my_username -p my_password
 ```
+### Restrict Telegraf to Consume Less CPU Resources (Optional)
+Uncomment below part in telegrafInstaller.sh file to enable this and bind telegraf to single core
+```bash
+   # Bind Telegraf to a specific CPU core (e.g., core 0)
+  #taskset -c 0 -p $(pgrep telegraf)
+
+  #echo "Telegraf restricted to use a single CPU core."
+```
+
 Script Features
 - Downloads the Telegraf configuration file from a specified GitHub repository.
 - Updates the configuration file with the provided InfluxDB URL, username, and password.
 - Restarts the Telegraf service to apply the changes.
-- Restricts Telegraf to use a single CPU core after restarting (optional).  
+- Restricts Telegraf to use a single CPU core after restarting (optional).
+

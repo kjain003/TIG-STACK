@@ -6,10 +6,11 @@ telegraf,influx and grafana configuration to monitor linux server performance me
 
 This script automates the setup of InfluxDB using Docker Compose.
 
-## Prerequisites
+## Optional Prerequisites
 
 - Docker: Ensure Docker is installed on your system. You can install Docker by following the instructions on the [official Docker website](https://docs.docker.com/get-docker/).
 - Docker Compose: Ensure Docker Compose is installed on your system. You can install Docker Compose by following the instructions on the [official Docker Compose website](https://docs.docker.com/compose/install/).
+- If both docker and docker compose are not install, the script will do that for you
 
 ## Usage
 

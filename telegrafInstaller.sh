@@ -17,8 +17,8 @@ usage() {
   exit 1
 }
 
-# Parse command-line options
-while getopts ":i:u:p:" opt; do
+### Parse command-line options
+while getopts ":i:u:p:h" opt; do
   case $opt in
     i)
       influx_url="$OPTARG"
@@ -33,6 +33,9 @@ while getopts ":i:u:p:" opt; do
       echo "Invalid option: -$OPTARG" >&2
       usage
       ;;
+	h)
+	  usage
+      ;;	  
     :)
       echo "Option -$OPTARG requires an argument." >&2
       usage

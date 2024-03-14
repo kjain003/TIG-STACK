@@ -1,2 +1,2 @@
-# telegraf-config
-telegraf configuration to monitor linux server performance metrics
+# TIG STACK
+telegraf,influx and grafana configuration to monitor linux server performance metrics

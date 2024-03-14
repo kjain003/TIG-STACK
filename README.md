@@ -41,13 +41,13 @@ This script allows you to install and  update the Telegraf configuration file wi
 Make sure you have root privileges to run the script. Execute the script with the following command:
 
 ```bash
-sudo ./update_telegraf_config.sh -i <influx_url> -u <username> -p <password>
+sudo ./telegrafInstaller.sh -i <influx_url> -u <username> -p <password>
 ```
 Replace <influx_url>, <username>, and <password> with your InfluxDB URL, username, and password, respectively.
 
 For example:
 ```bash
-sudo ./update_telegraf_config.sh -i http://localhost:8086 -u my_username -p my_password
+sudo ./telegrafInstaller.sh -i http://localhost:8086 -u my_username -p my_password
 ```
 Script Features
 - Downloads the Telegraf configuration file from a specified GitHub repository.

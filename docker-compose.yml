@@ -7,9 +7,14 @@ services:
     ports:
       - "8086:8086"  # Expose InfluxDB HTTP API port
       - "8088:8088"  # Expose InfluxDB RPC port
+      - "8083:8083"  #Expose Web UI
     volumes:
       - ./influxdb_data:/var/lib/influxdb  # Persist data to host machine
       - ./influxdb_config:/etc/influxdb    # Mount custom configuration
+      #-./ssl:/etc/ssl/influxdb            # Mount SSL certificates
     restart: always
     environment:
       INFLUXDB_HTTP_AUTH_ENABLED: "true"  # Enable authentication
+      #INFLUXDB_HTTP_HTTPS_ENABLED: "true"  # Enable HTTPS
+      #INFLUXDB_HTTP_HTTPS_CERTIFICATE: "/etc/ssl/influxdb/server.crt"  # Path to SSL certificate
+      #INFLUXDB_HTTP_HTTPS_PRIVATE_KEY: "/etc/ssl/influxdb/server.key"  # Path to SSL private key

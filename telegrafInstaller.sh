@@ -93,7 +93,7 @@ sed -i "s#urls = \[\"http://localhost:8086\"\]#urls = [\"$influx_url\"]#" /tmp/t
 sed -i "s/database = \"telegraf\"/database = \"telegraf\"\\n  username = \"$username\"\\n  password = \"$password\"/" /tmp/telegraf.conf
 
 #Update configuration to add ip address of given device
-sed -i -e "s/__ip__/`hostname -i`/g" /tmp/telegraf.conf
+sed -i -e "s/__ip__/$(hostname -i | cut -d ' ' -f 1)/g" /tmp/telegraf.conf
 
 # Replace existing Telegraf configuration with the updated one
 mv /tmp/telegraf.conf ${TELEGRAFCFG}
